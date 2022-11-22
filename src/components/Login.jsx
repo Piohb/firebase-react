@@ -13,7 +13,7 @@ function Login() {
 
   const vibrate = (email, password) => {
     console.log('ça va viiibreeeer')
-    logInWithEmailAndPassword(email, password).then( () => { navigator.vibrate(10000) })
+    logInWithEmailAndPassword(email, password).then( () => { navigator.vibrate([125,75,125,275,200,275,125,75,125,275,200,600,200,600]) })
   }
 
   useEffect(() => {
