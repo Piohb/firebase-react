@@ -16,7 +16,6 @@ import {
     where,
     addDoc
 } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -94,10 +93,12 @@ const logInWithEmailAndPassword = async (email, password) => {
     }
   };
 
-  const logout = () => {
-    signOut(auth);
-    console.log('logout')
-    navigate("/")
+  const logout = async () => {
+    try {
+      signOut(auth);
+    } catch  {
+      console.log('no logout')
+    }
   };
 
   export {
